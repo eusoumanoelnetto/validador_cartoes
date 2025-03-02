@@ -13,15 +13,6 @@ Este projeto é um validador de cartões de crédito que identifica a bandeira d
 - Node.js
 - Jest (para testes)
 
-## Estrutura do Projeto
-
-validador_cartoes/
-├── src/
-│   ├── index.js          # Função principal para validar bandeira do cartão
-│   └── index.test.js     # Testes para a função de validação
-├── package.json          # Configurações do projeto e dependências
-└── README.md             # Documentação do projeto
-
 ## Como Usar
 
 1. Clone o repositório:
