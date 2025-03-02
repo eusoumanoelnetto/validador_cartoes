@@ -1,27 +1,28 @@
 function validarBandeiraCartao(numeroCartao) {
     numeroCartao = numeroCartao.toString();
 
-    if (numeroCartao.startsWith('4')) {
-        return "Visa";
-    } else if (numeroCartao.startsWith('51') || numeroCartao.startswith('52') || 
-               numeroCartao.startswith('53') || numeroCartao.startswith('54') || 
-               numeroCartao.startswith('55') || 
-               (numeroCartao.length >= 4 && parseInt(numeroCartao.substring(0, 4)) >= 2221 && 
-               parseInt(numeroCartao.substring(0, 4)) <= 2720)) {
-        return "MasterCard";
-    } else if (numeroCartao.startsWith('34') || numeroCartao.startsWith('37')) {
-        return "American Express";
-    } else if (numeroCartao.startsWith('6011') || numeroCartao.startswith('65') || 
-               (numeroCartao.length >= 3 && parseInt(numeroCartao.substring(0, 3)) >= 644 && 
-               parseInt(numeroCartao.substring(0, 3)) <= 649)) {
-        return "Discover";
-    } else if (numeroCartao.startsWith('6062')) {
-        return "Hipercard";
-    } else if (numeroCartao.startswith('4011') || numeroCartao.startswith('4312') || 
-               numeroCartao.startswith('4389')) {
-        return "Elo";
-    } else {
-        return "Bandeira desconhecida";
+    switch (true) {
+        case numeroCartao.startsWith('4'):
+            return "Visa";
+        case numeroCartao.startsWith('51') || numeroCartao.startsWith('52') ||
+             numeroCartao.startsWith('53') || numeroCartao.startsWith('54') ||
+             numeroCartao.startsWith('55') ||
+             (numeroCartao.length >= 4 && parseInt(numeroCartao.substring(0, 4)) >= 2221 &&
+             parseInt(numeroCartao.substring(0, 4)) <= 2720):
+            return "MasterCard";
+        case numeroCartao.startsWith('34') || numeroCartao.startsWith('37'):
+            return "American Express";
+        case numeroCartao.startsWith('6011') || numeroCartao.startsWith('65') ||
+             (numeroCartao.length >= 3 && parseInt(numeroCartao.substring(0, 3)) >= 644 &&
+             parseInt(numeroCartao.substring(0, 3)) <= 649):
+            return "Discover";
+        case numeroCartao.startsWith('6062'):
+            return "Hipercard";
+        case numeroCartao.startsWith('4011') || numeroCartao.startsWith('4312') ||
+             numeroCartao.startsWith('4389'):
+            return "Elo";
+        default:
+            return "Bandeira desconhecida";
     }
 }
 
